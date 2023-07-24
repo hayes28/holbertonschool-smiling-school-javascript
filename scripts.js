@@ -1,3 +1,4 @@
+// QUOTES CAROUSEL
 function createQuoteSlide(quote) {
     const { pic_url, name, title, text } = quote;
 
@@ -43,4 +44,65 @@ $(document).ready(function () {
             console.error('Error:', error);
         }
     });
+});
+
+// Popular Tutorials CAROUSEL
+// Create the HTML structure for a video card
+function createVideoCardHTML(video) {
+    const { thumb_url, title, 'sub-title': subTitle, duration, 'published-at': publishedAt, views } = video;
+    const videoCard = $('<div>').addClass('carousel-item');
+    const row = $('<div>').addClass('row mx-auto align-items-center').appendTo(videoCard);
+    const imgCol = $('<div>').addClass('col-12 col-sm-4 col-lg-4 offset-lg-1 text-center').appendTo(row);
+    const img = $('<img>').attr({
+        'src': thumb_url,
+        'alt': 'Video Thumbnail'
+    }).addClass('d-block align-self-center').appendTo(imgCol);
+    const textCol = $('<div>').addClass('col-12 col-sm-7 col-lg-6 offset-lg-0').appendTo(row);
+    const videoTitle = $('<h4>').addClass('video-title').text(title).appendTo(textCol);
+    const videoInfo = $('<p>').addClass('video-info').text(subTitle).appendTo(textCol);
+    const videoMetadata = $('<div>').addClass('video-metadata').appendTo(textCol);
+    $('<span>').addClass('video-metadata-item').text(duration).appendTo(videoMetadata);
+    $('<span>').addClass('video-metadata-item').text(publishedAt).appendTo(videoMetadata);
+    $('<span>').addClass('video-metadata-item').text(views).appendTo(videoMetadata);
+
+    return videoCard;
+}
+
+$(document).ready(function () {
+    const carouselInner = $('.carousel-inner');
+    const loader = $('.loader');
+
+    // Function to fetch and render the popular tutorials data
+// sourcery skip: avoid-function-declarations-in-blocks
+    function fetchAndRenderPopularTutorials() {
+        const carouselInner = $('.popular .carousel-inner');
+        const loader = $('.popular .loader');
+
+        loader.show();
+
+        $.ajax({
+            url: 'https://smileschool-api.hbtn.info/popular-tutorials',
+            type: 'GET',
+            success: function (videos) {
+                loader.hide();
+                carouselInner.empty();
+
+                $.each(videos, function (index, video) {
+                    // Create the video card HTML and append it to the carousel container
+                    const videoCard = createVideoCardHTML(video);
+                    if (index === 0) {
+                        videoCard.addClass('active');
+                    }
+                    carouselInner.append(videoCard);
+                });
+            },
+            error: function (error) {
+                loader.hide();
+                console.error('Error:', error);
+            }
+        });
+    }
+
+    // Fetch and render the popular tutorials when the page is ready
+    fetchAndRenderPopularTutorials();
 });

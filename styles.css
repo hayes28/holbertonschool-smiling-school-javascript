@@ -297,6 +297,8 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Popular Tutorials Section */
+
 /* POPULAR SECTION  */
 
 .popular {
@@ -392,6 +394,121 @@
   }
   .section .card {
     width: 16rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  :root {
+    --popular-arrows-x: -15px;
+  }
+  .section .card-img-overlay img {
+    width: 30%;
+  }
+  .section .card-img-overlay {
+    /* top: 25px; */
+    top: 5%;
+  }
+}
+
+/* Additional Styling (Modify as needed) */
+
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #000;
+}
+
+.header .navbar {
+  padding: 0;
+}
+
+.header .navbar-toggler {
+  outline: none;
+  border: none;
+}
+
+.header .navbar-brand {
+  text-decoration: none;
+}
+
+.header .navbar-brand img {
+  display: block;
+}
+
+.header .navbar-nav .nav-link {
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.btn-smile {
+  background-color: var(--main-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.pros img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.pros h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.pros span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Styling (Modify as needed) */
+
+@media screen and (max-width: 767px) {
+  .header .navbar-brand img {
+    width: 80px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero .list-group-item {
+    font-size: 12px;
+  }
+
+  .hero .btn-smile {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  .pros h3 {
+    font-size: 16px;
+  }
+
+  .pros span {
+    font-size: 12px;
   }
 }
 
