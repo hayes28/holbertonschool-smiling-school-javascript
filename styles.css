@@ -1,7 +1,11 @@
+@import url("style.css");
+
+/*  VARIABLES */
 :root {
   --main-color: #c271ff;
   --opacity-value: 0.9;
   --background-color: #071629;
+  --color-grey: #979797;
   --font-family-1: "Source Sans Pro", sans-serif;
   --font-family-2: "Spin Cycle OT", sans-serif;
   --font-family-3: Coiny, sans-serif;
@@ -297,43 +301,75 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Popular Tutorials Section */
-
 /* POPULAR SECTION  */
 
 .popular {
-  height: auto;
   background-color: var(--color-white);
+  padding: 40px 0;
 }
 
-.popular .section-header {
-  padding-top: 87px;
-  padding-bottom: 75px;
-  color: var(--background-color);
+
+.popular .section-header h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
 
-.section .card {
-  border: 0;
-  width: 16rem;
+.popular .carousel-inner {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.popular .card {
-  padding-bottom: 87px;
+.popular .carousel-item {
+  margin: 0 10px;
 }
 
-.section .card-img-overlay {
-  /* top: 25px; */
-  top: 5%;
-}
-.section .card-title {
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--background-color);
+.popular .carousel-item img {
+  width: 100%;
+  border-radius: 8px;
 }
 
-.section .card-text {
+.popular .video-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.popular .video-info {
   font-size: 14px;
-  line-height: 24px;
+  color: var(--color-grey);
+}
+
+.popular .video-metadata {
+  font-size: 14px;
+  color: var(--color-grey);
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular .video-metadata-item {
+  margin-right: 10px;
+}
+
+.popular .loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #c271ff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 5s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .popular .carousel-control-prev,
@@ -342,11 +378,11 @@
 }
 
 .popular .carousel-control-prev.arrow-left {
-  left: var(--popular-arrows-x);
+  left: -6vw;
 }
 
 .popular .carousel-control-next.arrow-right {
-  right: var(--popular-arrows-x);
+  right: -6vw;
 }
 
 @media screen and (max-width: 1280px) {
@@ -358,42 +394,14 @@
   }
 }
 
-@media screen and (max-width: 1150px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-  .section .card-img-overlay {
-    /* top: 25px; */
-    top: 4%;
-  }
-  .section .card-img-overlay img {
-    width: 35%;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-
-  .section .card {
-    width: 16rem;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-    /* top: 25px; */
-    top: 5%;
-  }
-}
-
 @media screen and (max-width: 767px) {
-  :root {
-    --popular-arrows-x: -6vw;
+  .popular .carousel-control-prev.arrow-left,
+  .popular .carousel-control-next.arrow-right {
+    left: -6vw;
+    right: -6vw;
   }
-  .section .card {
-    width: 16rem;
+  .popular .carousel-item {
+    flex: 0 0 16rem;
   }
 }
 

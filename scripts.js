@@ -73,7 +73,6 @@ $(document).ready(function () {
     const loader = $('.loader');
 
     // Function to fetch and render the popular tutorials data
-// sourcery skip: avoid-function-declarations-in-blocks
     function fetchAndRenderPopularTutorials() {
         const carouselInner = $('.popular .carousel-inner');
         const loader = $('.popular .loader');
