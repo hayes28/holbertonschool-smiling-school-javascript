@@ -49,24 +49,38 @@ $(document).ready(function () {
 // Popular Tutorials CAROUSEL
 // Create the HTML structure for a video card
 function createVideoCardHTML(video) {
-    const { thumb_url, title, 'sub-title': subTitle, duration, 'published-at': publishedAt, views } = video;
-    const videoCard = $('<div>').addClass('carousel-item');
-    const row = $('<div>').addClass('row mx-auto align-items-center').appendTo(videoCard);
-    const imgCol = $('<div>').addClass('col-12 col-sm-4 col-lg-4 offset-lg-1 text-center').appendTo(row);
-    const img = $('<img>').attr({
+    const { thumb_url, title, 'sub-title': subTitle, duration, author_pic_url, author } = video;
+
+    const videoCard = $('<div>').addClass('card video-card h-100 col-12 col-sm-6 col-md-4 card-deck');
+    const thumbnailContainer = $('<div>').addClass('position-relative card border-0 d-flex flex-column').appendTo(videoCard);
+    $('<img>').attr({
         'src': thumb_url,
         'alt': 'Video Thumbnail'
-    }).addClass('d-block align-self-center').appendTo(imgCol);
-    const textCol = $('<div>').addClass('col-12 col-sm-7 col-lg-6 offset-lg-0').appendTo(row);
-    const videoTitle = $('<h4>').addClass('video-title').text(title).appendTo(textCol);
-    const videoInfo = $('<p>').addClass('video-info').text(subTitle).appendTo(textCol);
-    const videoMetadata = $('<div>').addClass('video-metadata').appendTo(textCol);
-    $('<span>').addClass('video-metadata-item').text(duration).appendTo(videoMetadata);
-    $('<span>').addClass('video-metadata-item').text(publishedAt).appendTo(videoMetadata);
-    $('<span>').addClass('video-metadata-item').text(views).appendTo(videoMetadata);
+    }).addClass('card-img-top').appendTo(thumbnailContainer);
+    $('<img>').attr({
+        'src': 'images/play.png',
+        'alt': 'Play Button'
+    }).addClass('rounded-circle mr-2 play-overlay position-absolute').appendTo(thumbnailContainer);
+    const cardBody = $('<div>').addClass('card-body').appendTo(videoCard);
+    $('<h4>').addClass('card-title').text(title).appendTo(cardBody);
+    $('<h5>').addClass('card-subtitle mb-2 text-muted').text(subTitle).appendTo(cardBody);
+    const avatarContainer = $('<div>').addClass('d-flex align-items-center').appendTo(cardBody);
+    $('<img>').attr({
+        'src': author_pic_url,
+        'alt': 'Avatar'
+    }).addClass('rounded-circle mr-2 avatar').appendTo(avatarContainer);
+    $('<p>').addClass('mb-0').text(author).appendTo(avatarContainer);
+    const metadataContainer = $('<div>').addClass('d-flex justify-content-between mt-2').appendTo(cardBody);
+    const starRating = $('<div>').addClass('star-rating').appendTo(metadataContainer);
+    $('<img>').attr({
+        'src': 'images/star_on.png',
+        'alt': 'Star On'
+    }).appendTo(starRating);
+    $('<p>').addClass('mb-0').text(duration).appendTo(metadataContainer);
 
     return videoCard;
 }
+
 
 $(document).ready(function () {
     const carouselInner = $('.carousel-inner');
@@ -86,14 +100,21 @@ $(document).ready(function () {
                 loader.hide();
                 carouselInner.empty();
 
-                $.each(videos, function (index, video) {
-                    // Create the video card HTML and append it to the carousel container
-                    const videoCard = createVideoCardHTML(video);
-                    if (index === 0) {
-                        videoCard.addClass('active');
+                for (let i = 0; i < videos.length; i += 4) {
+                    const videoGroup = $('<div>').addClass('carousel-item');
+                    if (i === 0) {
+                        videoGroup.addClass('active');
                     }
-                    carouselInner.append(videoCard);
-                });
+                    const row = $('<div>').addClass('row').appendTo(videoGroup);
+
+                    for (let j = i; j < i + 4 && j < videos.length; j++) {
+                        const videoCard = createVideoCardHTML(videos[j]);
+                        videoCard.addClass('col-12 col-sm-6 col-lg-3'); // Adjust as needed
+                        row.append(videoCard);
+                    }
+
+                    carouselInner.append(videoGroup);
+                }
             },
             error: function (error) {
                 loader.hide();
@@ -101,6 +122,9 @@ $(document).ready(function () {
             }
         });
     }
+
+
+
 
     // Fetch and render the popular tutorials when the page is ready
     fetchAndRenderPopularTutorials();

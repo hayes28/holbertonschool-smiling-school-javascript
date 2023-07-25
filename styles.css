@@ -1,4 +1,3 @@
-@import url("style.css");
 
 /*  VARIABLES */
 :root {
@@ -303,57 +302,57 @@
 
 /* POPULAR SECTION  */
 
-.popular {
+/* .popular {
   background-color: var(--color-white);
   padding: 40px 0;
-}
+}*/
 
 
-.popular .section-header h2 {
+/*.popular .section-header h2 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
-}
+} */
 
-.popular .carousel-inner {
+/* .popular .carousel-inner {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
-.popular .carousel-item {
+/* .popular .carousel-item {
   margin: 0 10px;
-}
+}*/
 
-.popular .carousel-item img {
+/* .popular .carousel-item img {
   width: 100%;
   border-radius: 8px;
-}
+} */
 
-.popular .video-title {
+/* .popular .video-title {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
-}
+} */
 
-.popular .video-info {
+/* .popular .video-info {
   font-size: 14px;
   color: var(--color-grey);
-}
+} */
 
-.popular .video-metadata {
+/* .popular .video-metadata {
   font-size: 14px;
   color: var(--color-grey);
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.popular .video-metadata-item {
+/* .popular .video-metadata-item {
   margin-right: 10px;
-}
+} */
 
-.popular .loader {
+/* .popular .loader {
   border: 10px solid #f3f3f3;
   border-top: 10px solid #c271ff;
   border-radius: 50%;
@@ -361,7 +360,34 @@
   height: 80px;
   animation: spin 5s linear infinite;
   margin: auto;
+} */
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
+
+.play-overlay {
+  top: 50%;
+  left: 50%;
+  width: 45%;
+  /* height: 15%; */
+  transform: translate(-50%, -50%);
+}
+
+/* .video-card {
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+} */
+
 
 @keyframes spin {
   0% {
