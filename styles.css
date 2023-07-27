@@ -168,7 +168,7 @@
   padding-bottom: 98px;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .pro1,
   .pro2 {
     padding-bottom: 58px;
@@ -187,9 +187,9 @@
   .courses-header .navbar-nav li:nth-child(1) a:after {
     width: 0%;
   }
-}
+} */
 
-/* Quotes Section  */
+/* Quotes Section */
 
 .quotes {
   height: 392px;
@@ -238,7 +238,7 @@
   padding-left: var(--quotes-arrows-pad);
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   .quotes .carousel-item img {
     margin-left: 80px;
   }
@@ -283,7 +283,7 @@
     padding: 0px;
     padding-top: 24px;
   }
-}
+} */
 
 .loader {
   border: 10px solid #f3f3f3;
@@ -411,7 +411,7 @@
   right: -6vw;
 }
 
-@media screen and (max-width: 1280px) {
+/* @media screen and (max-width: 1280px) {
   :root {
     --popular-arrows-x: -4vw;
   }
@@ -429,9 +429,9 @@
   .popular .carousel-item {
     flex: 0 0 16rem;
   }
-}
+} */
 
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   :root {
     --popular-arrows-x: -15px;
   }
@@ -440,9 +440,6 @@
   }
   .section .card-img-overlay {
     /* top: 25px; */
-    top: 5%;
-  }
-}
 
 /* Additional Styling (Modify as needed) */
 
@@ -519,7 +516,7 @@ body {
 
 /* Responsive Styling (Modify as needed) */
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .header .navbar-brand img {
     width: 80px;
   }
@@ -544,9 +541,9 @@ body {
   .pros span {
     font-size: 12px;
   }
-}
+} */
 
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   :root {
     --popular-arrows-x: -15px;
   }
@@ -555,9 +552,9 @@ body {
   }
   .section .card-img-overlay {
     /* top: 25px; */
-    top: 5%;
+    /*top: 5%
   }
-}
+} */
 
 /* SMILES Section  */
 
@@ -593,7 +590,7 @@ body {
   padding-bottom: 52px;
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   :root {
     --smile-p-margin: 5vw;
     --smile-padding: 60px;
@@ -618,9 +615,9 @@ body {
   .row .smile4 {
     padding-right: var(--smile-padding);
   }
-}
+} */
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   :root {
     --smile-p-margin: 20vw;
     --smile-padding: 0;
@@ -630,7 +627,7 @@ body {
   .smile3 {
     padding-bottom: 50px;
   }
-}
+} */
 
 /* Footer  */
 
@@ -666,7 +663,7 @@ body {
   padding-bottom: 39px;
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   .footer {
     padding-left: 40px;
     padding-right: 40px;
@@ -693,7 +690,7 @@ body {
   .footer .social {
     padding: 45px 0;
   }
-}
+} */
 
 /* ==============================================================
 ==============================================================
@@ -727,7 +724,7 @@ body {
   width: 200px;
 }
 
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   .pricing-header h1 {
     font-size: 24px;
   }
@@ -737,7 +734,7 @@ body {
   .pricing-header .title-fig {
     width: 150px;
   }
-}
+} */
 
 /* PRICING GRID  */
 
@@ -789,7 +786,7 @@ body {
   vertical-align: middle;
 }
 
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
   .prices-grid .table .prices-col-3 {
     padding-left: 30px;
   }
@@ -818,7 +815,7 @@ body {
   .prices-grid .pricing-table-title-1 {
     padding-right: 36px;
   }
-}
+} */
 
 /* FAQ SECTION  */
 
@@ -860,7 +857,7 @@ body {
   padding-right: var(--faq-pad-outer);
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
+/* @media screen and (min-width: 768px) and (max-width: 991px) {
   :root {
     --faq-pad-inner: 3vw;
     --faq-pad-outer: 9vw;
@@ -884,7 +881,7 @@ body {
   .faq .section-body {
     margin-bottom: 108px;
   }
-}
+} */
 
 /* ==============================================================
 ==============================================================
@@ -913,13 +910,13 @@ body {
   padding-bottom: 51px;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
   .courses-header {
     background-position-y: 0;
     background-size: initial;
     background-position-y: -100px;
   }
-}
+} */
 
 /* SEARCH SECTION  */
 
@@ -1015,7 +1012,7 @@ body {
   background-color: white;
 }
 
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   .search .box1 .input-group {
     margin-bottom: 0;
   }
@@ -1024,7 +1021,7 @@ body {
     margin-top: 19px;
     margin-bottom: 19px;
   }
-}
+} */
 
 /* RESULTS SECTION  */
 .results .section-title {
@@ -1043,7 +1040,7 @@ body {
   padding-bottom: 18px;
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
+/* @media screen and (min-width: 576px) and (max-width: 767px) {
   .results .card-img-overlay {
     top: 1vh;
   }
@@ -1065,4 +1062,4 @@ body {
   .results .card {
     width: 90vw;
   }
-}
+} */

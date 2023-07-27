@@ -47,12 +47,11 @@ $(document).ready(function () {
 });
 
 // Popular Tutorials CAROUSEL
-// Create the HTML structure for a video card
 function createVideoCardHTML(video) {
     const { thumb_url, title, 'sub-title': subTitle, duration, author_pic_url, author } = video;
 
-    const videoCard = $('<div>').addClass('card video-card h-100 col-12 col-sm-6 col-md-4 card-deck');
-    const thumbnailContainer = $('<div>').addClass('position-relative card border-0 d-flex flex-column').appendTo(videoCard);
+    const videoCard = $('<div>').addClass('card-video-group h-100');
+    const thumbnailContainer = $('<div>').addClass('position-relative').appendTo(videoCard);
     $('<img>').attr({
         'src': thumb_url,
         'alt': 'Video Thumbnail'
@@ -83,8 +82,8 @@ function createVideoCardHTML(video) {
 
 
 $(document).ready(function () {
-    const carouselInner = $('.carousel-inner');
-    const loader = $('.loader');
+    // const carouselInner = $('.carousel-inner');
+    // const loader = $('.loader');
 
     // Function to fetch and render the popular tutorials data
     function fetchAndRenderPopularTutorials() {
@@ -128,4 +127,37 @@ $(document).ready(function () {
 
     // Fetch and render the popular tutorials when the page is ready
     fetchAndRenderPopularTutorials();
+});
+
+// Latest Videos CAROUSEL
+$(document).ready(function () {
+    const carouselInner = $('.latest .carousel-inner');
+    const loader = $('.latest .loader');
+
+    loader.show();
+
+    $.ajax({
+        url: 'https://smileschool-api.hbtn.info/latest-videos',
+        type: 'GET',
+        success: function (videos) {
+            loader.hide();
+            carouselInner.empty();
+
+            for (let i = 0; i < videos.length; i += 4) {
+                const videoGroup = $('<div>').addClass('carousel-item');
+                if (i === 0) {
+                    videoGroup.addClass('active');
+                }
+                const row = $('<div>').addClass('row').appendTo(videoGroup);
+
+                for (let j = i; j < i + 4 && j < videos.length; j++) {
+                    const videoCard = createVideoCardHTML(videos[j]);
+                    videoCard.addClass('col-12 col-sm-6 col-lg-3'); // Adjust as needed
+                    row.append(videoCard);
+                }
+
+                carouselInner.append(videoGroup);
+            }
+        }
+    });
 });
