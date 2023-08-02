@@ -189,7 +189,7 @@
 /* Quotes Section  */
 
 .quotes {
-  height: 392px;
+  /* height: 392px; */
   background-color: var(--main-color);
 }
 
@@ -235,50 +235,9 @@
   padding-left: var(--quotes-arrows-pad);
 }
 
-/* @media screen and (max-width: 991px) {
+/* @media screen and (max-width: 767px) {
   .quotes .carousel-item img {
-    margin-left: 80px;
-  }
-  .quote-text {
-    padding-left: 43px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .quotes .carousel-item img {
-    margin-left: 40px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  :root {
-    --arrow-move-y: 40%;
-    --arrow-move-x: 13px;
-  }
-  .quotes {
-    height: auto;
-  }
-  .quotes .carousel-item img {
-    margin: 90px auto 0 auto;
-    padding-bottom: 10px;
-  }
-  .quotes .carousel-item .quote-text {
-    padding-bottom: 103px;
-  }
-
-  .quotes .carousel-control-prev.arrow-left {
-    bottom: var(--arrow-move-y);
-    left: var(--arrow-move-x);
-  }
-
-  .quotes .carousel-control-next.arrow-right {
-    bottom: var(--arrow-move-y);
-    right: var(--arrow-move-x);
-  }
-
-  .quote-text {
-    padding: 0px;
-    padding-top: 24px;
+    margin-left: 85px;
   }
 } */
 
@@ -296,8 +255,6 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-/* Popular Tutorials Section */
 
 /* POPULAR SECTION  */
 
@@ -336,130 +293,61 @@
   line-height: 24px;
 }
 
-.popular .carousel-control-prev,
-.popular .carousel-control-next {
-  width: 60px;
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.popular .carousel-control-prev.arrow-left {
-  left: var(--popular-arrows-x);
+.thumbnail-container {
+  position: relative;
+  max-height: 200px;
+  overflow: hidden;
 }
 
-.popular .carousel-control-next.arrow-right {
-  right: var(--popular-arrows-x);
+.rating {
+  display: flex;
 }
 
-/* @media screen and (max-width: 1280px) {
-  :root {
-    --popular-arrows-x: -4vw;
-  }
-  .section .card {
-    width: 19vw;
-  }
+/* SLICK CAROUSEL */
+
+.carousel-container {
+  position: relative;
 }
 
-@media screen and (max-width: 1150px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-  .section .card-img-overlay {
-
-    top: 4%;
-  }
-  .section .card-img-overlay img {
-    width: 35%;
-  }
-} */
-
-/* @media screen and (max-width: 991px) {
-  :root {
-    --popular-arrows-x: -3vw;
-  }
-
-  .section .card {
-    width: 16rem;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-
-    top: 5%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  :root {
-    --popular-arrows-x: -6vw;
-  }
-  .section .card {
-    width: 16rem;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  :root {
-    --popular-arrows-x: -15px;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-
-    top: 5%;
-  }
-} */
-
-/* Additional Styling (Modify as needed) */
-
-body {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  background-color: #fff;
+.slick-prev-popular,
+.slick-next-popular,
+.slick-prev-latest,
+.slick-next-latest {
+  position: absolute;
+  top: 35%;
+  z-index: 10;
   color: #333;
+  transform: translateY(-60%);  /* Adjusted value */
+  font-size: 0;
+  width: 30px;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header {
-  background-color: #000;
-}
-
-.header .navbar {
-  padding: 0;
-}
-
-.header .navbar-toggler {
-  outline: none;
+.slick-prev-popular,
+.slick-prev-latest {
+  background: url('./images/arrow_black_left.png') no-repeat;
+  background-position: center;
+  background-size: cover;
   border: none;
+  left: -30px;  /* Adjusted value */
 }
 
-.header .navbar-brand {
-  text-decoration: none;
-}
-
-.header .navbar-brand img {
-  display: block;
-}
-
-.header .navbar-nav .nav-link {
-  padding: 0 10px;
-  text-transform: uppercase;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.btn-smile {
-  background-color: var(--main-color);
+.slick-next-popular,
+.slick-next-latest {
+  background: url('./images/arrow_black_right.png') no-repeat;
+  background-position: center;
+  background-size: cover;
   border: none;
-  right: 5px;  /* Adjusted value */
+  right: -30px;  /* Adjusted value */
 }
-}*/
 
 /* SMILES Section  */
 
