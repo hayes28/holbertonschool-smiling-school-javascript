@@ -457,72 +457,8 @@ body {
 .btn-smile {
   background-color: var(--main-color);
   border: none;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  border-radius: 30px;
-  cursor: pointer;
+  right: 5px;  /* Adjusted value */
 }
-
-.pros img {
-  width: 100%;
-  border-radius: 50%;
-}
-
-.pros h3 {
-  font-size: 18px;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.pros span {
-  display: block;
-  font-size: 14px;
-  color: #666;
-}
-
-/* Responsive Styling (Modify as needed) */
-
-/* @media screen and (max-width: 767px) {
-  .header .navbar-brand img {
-    width: 80px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero .list-group-item {
-    font-size: 12px;
-  }
-
-  .hero .btn-smile {
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-
-  .pros h3 {
-    font-size: 16px;
-  }
-
-  .pros span {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  :root {
-    --popular-arrows-x: -15px;
-  }
-  .section .card-img-overlay img {
-    width: 30%;
-  }
-  .section .card-img-overlay {
-
-    top: 5%;
-  }
 }*/
 
 /* SMILES Section  */
@@ -558,45 +494,6 @@ body {
 .register-btn {
   padding-bottom: 52px;
 }
-
-/* @media screen and (max-width: 991px) {
-  :root {
-    --smile-p-margin: 5vw;
-    --smile-padding: 60px;
-  }
-  .smile1,
-  .smile2 {
-    padding-bottom: 58px;
-  }
-  .row .smile1,
-  .row .smile2,
-  .row .smile3,
-  .row .smile4 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .row .smile1,
-  .row .smile3 {
-    padding-left: var(--smile-padding);
-  }
-  .row .smile2,
-  .row .smile4 {
-    padding-right: var(--smile-padding);
-  }
-}
-
-@media screen and (max-width: 576px) {
-  :root {
-    --smile-p-margin: 20vw;
-    --smile-padding: 0;
-  }
-  .smile1,
-  .smile2,
-  .smile3 {
-    padding-bottom: 50px;
-  }
-} */
 
 /* Footer  */
 
