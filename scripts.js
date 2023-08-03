@@ -39,7 +39,7 @@ $(function () {
 
 
 // POPULAR VIDEO SECTION
-function createCard(video) {
+function createCardPopular(video) {
 	const { thumb_url, title, 'sub-title': sub_title, author_pic_url, author, duration, star } = video;
 
 	let stars = '';
@@ -78,7 +78,7 @@ function createCard(video) {
 }
 
 $(function () {
-	const loader = $('.loader');
+	const loader = $('.loader-popular');
 	loader.show();
 
 	$.get("https://smileschool-api.hbtn.info/popular-tutorials", function (data) {
@@ -86,7 +86,7 @@ $(function () {
 		$('.carousel-popular').empty();
 
 		data.forEach((video) => {
-			let card = createCard(video);
+			let card = createCardPopular(video);
 			$('.carousel-popular').append(card);
 		});
 
@@ -95,6 +95,97 @@ $(function () {
 			slidesToScroll: 1,
 			prevArrow: $('.slick-prev-popular'),
 			nextArrow: $('.slick-next-popular'),
+			responsive: [
+				{
+					breakpoint: 1920,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			],
+		});
+	});
+});
+
+// LATEST VIDEOS SECTION
+function createCardLatest(video) {
+	const { thumb_url, title, 'sub-title': sub_title, author_pic_url, author, duration, star } = video;
+
+	let stars = '';
+	for (let i = 1; i <= 5; i++) {
+		if (i <= star) {
+			stars += '<img src="images/star_on.png" alt="star on" width="15px" height="15px">';
+		} else {
+			stars += '<img src="images/star_off.png" alt="star off" width="15px" height="15px">';
+		}
+	}
+
+	const cardContainer = $('<div>').addClass('col-12 col-sm-6 col-md-4 card-deck');
+	const card = $('<div>').addClass('card border-0 d-flex flex-column').appendTo(cardContainer);
+
+	const thumbnailContainer = $('<div>').addClass('thumbnail-container position-relative').appendTo(card);
+	$('<img>').attr({ 'src': thumb_url, 'alt': 'Video thumbnail' }).addClass('card-img-top').appendTo(thumbnailContainer);
+
+	const overlay = $('<div>').addClass('card-img-overlay text-center').appendTo(thumbnailContainer);
+	$('<img>').attr({ 'src': 'images/play.png', 'alt': 'Play Button', 'width': '64px' }).addClass('align-self-center play-overlay').appendTo(overlay);
+
+	const cardBody = $('<div>').addClass('card-body px-2').appendTo(card);
+	$('<h5>').addClass('card-title font-weight-bold').text(title).appendTo(cardBody);
+
+	$('<p>').addClass('card-text text-muted').text(sub_title).appendTo(cardBody);
+
+	const creator = $('<div>').addClass('creator d-flex align-items-center').appendTo(cardBody);
+	$('<img>').attr({ 'src': author_pic_url, 'alt': 'Author' }).css('width', '30px').addClass('rounded-circle').appendTo(creator);
+	$('<h6>').addClass('pl-3 m-0 main-color').text(author).appendTo(creator);
+
+	const info = $('<div>').addClass('info pt-3 d-flex justify-content-between').appendTo(cardBody);
+	const rating = $('<div>').addClass('rating d-flex').appendTo(info);
+	rating.append(stars);
+	$('<span>').addClass('main-color').text(duration).appendTo(info);
+
+	return cardContainer;
+}
+
+$(function () {
+	const loader = $('.loader-latest');
+	loader.show();
+
+	$.get("https://smileschool-api.hbtn.info/latest-videos", function (data) {
+		loader.hide();
+		$('.carousel-latest').empty();
+
+		data.forEach((video) => {
+			let card = createCardLatest(video);
+			$('.carousel-latest').append(card);
+		});
+
+		$('.carousel-latest').slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			prevArrow: $('.slick-prev-latest'),
+			nextArrow: $('.slick-next-latest'),
 			responsive: [
 				{
 					breakpoint: 1920,
